@@ -98,11 +98,11 @@ def build_model(load_params, res_param_names):
 							mode='average_exc_pad',
 							ignore_border=False)
 	# final dense layer
-	fc_out = T.dot(pool2_out.flatten(),fc_W) + fc_b
+	fc_out = T.dot(pool2_out.flatten(ndim=2),fc_W) + fc_b
 	#fc_out = T.dot(fc_W,pool2_out) + fc_b	
 	
 
-	Y_hat = T.nnet.softmax(fc_out.flatten()) # prediction probabilities
+	Y_hat = T.nnet.softmax(fc_out.flatten(ndim=2)) # prediction probabilities
 	prediction = T.argmax(Y_hat) # prediction class 
 	params = conv1_params + res_params + fc_params
 	cost = T.nnet.categorical_crossentropy(Y_hat, Y).mean()
