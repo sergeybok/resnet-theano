@@ -19,8 +19,11 @@ Also another note is that I didn't make any flags for building a brand new model
 
 
 To use it I usually run it like this:
+
          python -i resnet.py 
+
 And then do 
+
          import cv2
          im = cv2.imread(name of image)
          im = cv2.resize(im2,(224,224))
