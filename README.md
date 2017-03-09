@@ -26,7 +26,7 @@ And then do
 
          import cv2
          im = cv2.imread(name of image)
-         im = cv2.resize(im,(224,224))
+         im = cv2.resize(im,(224,224)) # if image isn't a square I suggest cropping before this
          im = im.reshape((1,3,224,224))
          prediction = predict(im)
          
