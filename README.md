@@ -26,6 +26,7 @@ And then do
 
          import cv2
          im = cv2.imread(name of image)
+         im = np.asarray(im,dtype='float32')
          im = im / 255 # normalize, this is actually a step I'm not too sure about bc tensorpack does the normalization weirdly
          im = cv2.resize(im,(224,224)) # if image isn't a square I suggest cropping before this
          im = im.reshape((1,3,224,224))
