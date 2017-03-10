@@ -7,7 +7,7 @@
 2) And the guys who wrote tensorpack for writing that script that turns a .caffemodel file into npy file, https://github.com/ppwwyyxx/tensorpack/tree/master/examples/ResNet
 
 
-HUGE Disclaimer: I can't really tell if this is working exactly right because when I try to classify images I get an index as an output but I don't really know where the key is for this index (label thats' associated with the index). Tensorpack has synset_words.txt file however that file uses some weird encoding (e.g. n02105641) which I don't really understand and if I assume that the label is a line number of that file then it's for sure not working. However I believe it to be working on the basis of me inputing 5 different pictures of german shepherds and it always returning 904, so there's that. 
+HUGE Disclaimer: I can't really tell if this is working exactly right because when I try to classify images I get an index as an output but I don't really know where the key is for this index (label thats' associated with the index). Tensorpack has synset_words.txt file however that file uses some weird encoding (e.g. n02105641) which I don't really understand and if I assume that the label is a line number of that file then it's for sure not working. However I believe it to be working on the basis of me inputing 5 different pictures of german shepherds and it always returning 583, so there's that. 
 
 
 Essentially to get this working all you need to do is download the resnet101 caffemodel (deploy version) from the Kaiming He's repository on github. Then follow the instructions of tensorpack to convert that to an npy file and name it ResNet101.npy (I have that hardcoded should be pretty simple to change if you want though).
